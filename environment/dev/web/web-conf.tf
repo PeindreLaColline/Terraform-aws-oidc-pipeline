@@ -5,6 +5,7 @@ module "security-group-module" {
 
 variable "ec2_name"{
     type = string
+    default = "web-server-dev"
 }
 
 resource "aws_vpc" "vpc"{
