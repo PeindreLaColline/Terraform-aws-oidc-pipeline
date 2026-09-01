@@ -20,17 +20,17 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout
+        uses: actions/checkout@v4
 
       - name: Configure AWS credentials via OIDC
-        uses: aws-actions/configure-aws-credentials
+        uses: aws-actions/configure-aws-credentials@v6.1.1
         with:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           role-session-name: gha-terraform-plan-${{ github.run_id }}
           aws-region: eu-north-1
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform
+        uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: latest
           terraform_wrapper: false
@@ -54,7 +54,7 @@ jobs:
         continue-on-error: true
 
       - name: Comment plan result on PR
-        uses: actions/github-script
+        uses: actions/github-script@v7
         env:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
