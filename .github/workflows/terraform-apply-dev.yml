@@ -5,6 +5,7 @@ on:
     branches:
       - dev
     paths:
+      - "aws/**"
       - "environment/dev/**"
     types:
       - closed
