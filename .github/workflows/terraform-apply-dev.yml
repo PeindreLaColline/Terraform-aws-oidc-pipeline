@@ -6,6 +6,8 @@ on:
       - dev
     paths:
       - "environment/dev/**"
+    types:
+      - closed
   
 permissions:
   id-token: write
