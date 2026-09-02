@@ -47,6 +47,6 @@ resource "aws_instance" "web_server" {
 
     user_data = file("server-script.sh")
     tags = {
-        Name = var.ec2_name
+        Name = var.ec2_name 
     }
 }
