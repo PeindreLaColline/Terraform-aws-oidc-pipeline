@@ -45,7 +45,7 @@ resource "aws_instance" "web_server" {
     subnet_id = aws_subnet.public_subnet.id
     vpc_security_group_ids = [module.security-group-module.sg_output]
 
-    user_data = file("server-script.sh")
+    user_data = file("${path.module}/server-script.sh")
     tags = {
         Name = var.ec2_name 
     }
