@@ -3,9 +3,9 @@ terraform {
 
   backend "s3" {
     bucket       = "terraform-aws-oidc-pipeline"
-    key          = "terraform-aws-oidc-pipeline/dev/terraform.tfstate"
+    key          = "terraform-aws-oidc-pipeline/prod/terraform.tfstate"
     region       = "eu-north-1"
-    encrypt      = true
+    encrypt      = true 
     use_lockfile = true
   }
 }
