@@ -1,4 +1,4 @@
-module "aws"{
-    source = "../../aws"
-    ec2_name = "prod-web-server"
+module "aws" {
+  source   = "../../aws"
+  ec2_name = "prod-web-server"
 }
