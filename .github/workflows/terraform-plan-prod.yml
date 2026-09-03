@@ -4,7 +4,7 @@ on:
       - dev
     paths:
       - "aws/**"
-      - "environment/dev/**"
+      - "environment/prod/**"
 
 permissions:
   id-token: write
@@ -17,7 +17,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: environment/dev
+        working-directory: environment/prod
 
     steps:
       - name: Checkout repository
